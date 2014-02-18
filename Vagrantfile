@@ -38,6 +38,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         chef.add_recipe "apache2"
         chef.add_recipe "apache2::mod_php5"
         chef.add_recipe "apache2::mod_rewrite"
+        chef.add_recipe "java"
         chef.add_recipe "mytest"
         # chef.add_role "web"
 

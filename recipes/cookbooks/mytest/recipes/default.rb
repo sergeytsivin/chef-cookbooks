@@ -7,12 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
-package "git" do
-    action :install
-end
-
-package "php5" do
-    action :install
+["git", "subversion", "php5", "ant", "ant-contrib", "unzip"].each do |p|
+  package p
 end
 
 web_app "my_site" do
