@@ -32,13 +32,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # some recipes and/or roles.
     #
     config.vm.provision :chef_solo do |chef|
-        chef.cookbooks_path = "recipes/cookbooks"
+        chef.cookbooks_path = ["recipes/cookbooks", "recipes/site-cookbooks" ]
         chef.roles_path = "recipes/roles"
         chef.add_recipe "apt"
         chef.add_recipe "apache2"
         chef.add_recipe "apache2::mod_php5"
         chef.add_recipe "apache2::mod_rewrite"
-        chef.add_recipe "java"
+        chef.add_recipe "java::default"
+        chef.add_recipe "svnant"
         chef.add_recipe "mytest"
         # chef.add_role "web"
 

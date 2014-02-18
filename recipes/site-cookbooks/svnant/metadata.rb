@@ -1,0 +1,16 @@
+name             'svnant'
+maintainer       'Sergey Tsivin'
+maintainer_email 'sergey.tsivin@gmail.com'
+license          'Apache 2.0'
+description      'Installs/Configures svnant'
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+version          '0.1.0'
+depends          'java'
+
+supports 'centos'
+supports 'debian'
+supports 'fedora'
+supports 'freebsd'
+supports 'redhat'
+supports 'scientific'
+supports 'ubuntu'
