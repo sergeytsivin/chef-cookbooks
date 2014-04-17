@@ -1,0 +1,1 @@
+default[:showip][:server_name] = "YOUR HOST NAME"
