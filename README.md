@@ -1,30 +1,13 @@
-ChefSolo
-========
+Chef-cookbooks
+==============
 
-This is a bare minimum Vagrant project that creates a single page web app. The main purpose is to demonstrate
-how a working project can be created with minimum set of recipes.
-
-App is deployed using Chef Solo. It will install apache and php5 and create/enable a virtual host which can be
-accessed via http://mytest.wrk/ It should display the output of `phpinfo()` function
+This is my collection of chef cookbooks, which have been proved to work good in real projects. Creating a standalone cookbook repository (separate from the project repositories) should help creating new chef-based projects quickly and easily.
 
 Details
 -------
 
-This app uses two standard Opscode cookbooks:
-* `apt` cookbook provides means for updating the apt cache and adding package repositories if needed;
-* `apache2` cookbook provides means for creating virtual hosts.
+Collection is split into two directories:
+* recipes/cookbooks contains standard cookbooks that have been imported from 3rd parties, mostly from [chef community cookbooks](https://github.com/opscode-cookbooks);
+* site/cookbooks contains custom cookbooks that I created for various occasions.
 
-There's also a custom cookbook named mytest.wrk, which actually installs the app.
-
-How to keep the list of cookbooks short
----------------------------------------
-
-In general, use `package` resource to install software packages, for example, you can install php by simply adding
-this code to your recipe:
-    package "php5" do
-        action "install"
-    end
-
-You don't need to include recipes unless you want something more complicated than just installing a package.
-For example, `php` package helps in managing pear channels and installing pear packages and `apache2` package
-helps creating apache configuration files and enabling/disabling virtual hosts.
+This repository also includes a very basic Vagrantfile, which just creates a minimal box with no additional software installed.
